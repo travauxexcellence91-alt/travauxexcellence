@@ -1,12 +1,36 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import CategoryWizard from '../components/CategoryWizard';
 import Footer from '../components/Footer';
 import { categories } from '../config/categories';
 
 export default function PublishProject() {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]); // Utilise la première catégorie par défaut
+  const [searchParams] = useSearchParams();
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  // Lire la catégorie depuis l'URL et la mapper
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get('category');
+    if (categoryFromUrl) {
+      // Trouver la catégorie correspondante dans la liste
+      const foundCategory = categories.find(cat => 
+        cat.name.toLowerCase() === categoryFromUrl.toLowerCase() ||
+        cat.slug.toLowerCase() === categoryFromUrl.toLowerCase()
+      );
+      
+      if (foundCategory) {
+        setSelectedCategory(foundCategory);
+      } else {
+        // Si la catégorie n'est pas trouvée, créer une catégorie temporaire
+        setSelectedCategory({
+          name: categoryFromUrl,
+          slug: categoryFromUrl.toLowerCase().replace(/\s+/g, '-'),
+          steps: categories[0].steps // Utiliser les étapes par défaut
+        });
+      }
+    }
+  }, [searchParams]);
 
   const handleSubmit = (values: any) => {
     // Stocker les valeurs du projet en sessionStorage

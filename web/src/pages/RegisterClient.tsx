@@ -225,7 +225,7 @@ export default function RegisterClient() {
                   </a>
                 </p>
               </div>
-            </form>
+    </form>
           </div>
         </div>
       </div>
