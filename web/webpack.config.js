@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
@@ -33,16 +32,10 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    port: 5173,
-    historyApiFallback: true,
-    static: path.resolve(__dirname, 'public'),
-    hot: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
+      filename: 'index.html',
     }),
-    new Dotenv({ path: path.resolve(__dirname, '.env'), silent: true }),
   ],
 }; 
