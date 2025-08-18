@@ -460,11 +460,11 @@ export default function RegisterArtisan() {
               ⚙️ Comment ça fonctionne ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Un processus simple en 4 étapes pour développer votre activité
+              Un processus simple en 5 étapes pour développer votre activité
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
               {
                 icon: "📝",
@@ -485,6 +485,11 @@ export default function RegisterArtisan() {
                 icon: "💰",
                 title: "Transformez vos leads en contrats",
                 description: "Rencontrez vos nouveaux clients, signez vos devis, réalisez vos chantiers."
+              },
+              {
+                icon: "🏆",
+                title: "Accédez à des chantiers dédiés",
+                description: "Les artisans qui acceptent plus de 20 leads bénéficient d'un accès prioritaire à des demandes de chantiers exclusives et personnalisées."
               }
             ].map((step, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">

@@ -47,42 +47,42 @@ export default function PublishProject() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="h-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="h-12 flex items-center justify-between min-w-0">
             {/* Navigation gauche */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
               <button
                 onClick={() => navigate('/')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors duration-200"
+                className="flex items-center space-x-1 sm:space-x-2 text-gray-600 hover:text-gray-800 transition-colors duration-200"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span className="text-sm font-medium">Retour à l'accueil</span>
+                <span className="text-xs sm:text-sm font-medium hidden sm:inline">Retour à l'accueil</span>
               </button>
             </div>
 
             {/* Titre central */}
-            <div className="text-center">
-              <h1 className="text-lg font-semibold text-gray-800">Publier un projet</h1>
+            <div className="text-center flex-1 min-w-0">
+              <h1 className="text-base sm:text-lg font-semibold text-gray-800 truncate px-2">Publier un projet</h1>
               {selectedCategory && (
-                <p className="text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600 truncate px-2">
                   {selectedCategory.name}
                 </p>
               )}
             </div>
 
             {/* Navigation droite */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
               <button
                 onClick={() => navigate('/login')}
-                className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
                 Connexion
               </button>
               <button
                 onClick={() => navigate('/register-client')}
-                className="px-3 py-1.5 text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200"
+                className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200"
               >
                 Inscription
               </button>
