@@ -9,10 +9,12 @@ export default function Footer() {
           {/* Logo et description - 2 colonnes sur desktop */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">T</span>
-              </div>
-              <span className="text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+              <img 
+                src="/logo/logo3.png" 
+                alt="TRAVAUX EXCELLENCE" 
+                className="h-16 w-auto md:h-20"
+              />
+              <span className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
                 TRAVAUX EXCELLENCE
               </span>
             </div>

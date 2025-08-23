@@ -9,7 +9,14 @@ export default function Sidebar({ onLogout }: { onLogout: () => void }) {
   return (
     <aside className="w-60 shrink-0 h-screen sticky top-0 border-r bg-white">
       <div className="px-4 py-4 border-b">
-        <div className="text-lg font-semibold">Travaux Admin</div>
+        <div className="flex items-center space-x-2 mb-2">
+          <img 
+            src="/logo/logo3.png" 
+            alt="TRAVAUX EXCELLENCE" 
+            className="h-14 w-auto"
+          />
+          <div className="text-lg font-semibold">Travaux Admin</div>
+        </div>
         <div className="text-xs text-gray-500">Panel de gestion</div>
       </div>
       <nav className="p-2 space-y-1">
